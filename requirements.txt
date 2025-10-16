@@ -1,0 +1,16 @@
+# requirements.txt (baseline)
+torch
+torchvision
+numpy
+pandas
+matplotlib
+scikit-learn
+opencv-python
+Pillow
+albumentations
+tqdm
+kaggle
+pytorch-gradcam
+seaborn
+torchmetrics
+
