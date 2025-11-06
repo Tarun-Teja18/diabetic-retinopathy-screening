@@ -1,7 +1,7 @@
 venv/
 __pycache__/
 *.pyc
-data/raw/
-data/preprocessed/
+data/train_images/
+data/test_images/
 outputs/
 .kaggle/
