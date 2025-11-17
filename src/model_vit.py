@@ -1,36 +1,17 @@
-# [Code based on sources: 138-152]
-from vit_pytorch import ViT
+# model_vit.py
+import torch.nn as nn
+import timm
 
-def get_vit(num_classes=5, img_size=224):
+def get_vit(num_classes=2, img_size=224, pretrained=True):
     """
-    Creates a Vision Transformer (ViT-B/16) model.
+    Creates a Vision Transformer (ViT-B/16) model using timm,
+    with a custom classification head for `num_classes`.
     """
-    model = ViT(
-        image_size=img_size, # <-- Use the argument here
-        patch_size=16,
-        num_classes=num_classes,
-        dim=768,
-        depth=12,
-        heads=12,
-        mlp_dim=3072,
-        dropout=0.1,
-        emb_dropout=0.1
-    )
+    # This loads a ViT-Base model pretrained on ImageNet-21k/1k (depending on timm version)
+    model = timm.create_model('vit_base_patch16_224', pretrained=pretrained)
+
+    # timm ViT models usually expose the classifier as `model.head`
+    in_features = model.head.in_features
+    model.head = nn.Linear(in_features, num_classes)
+
     return model
-
-
-'''from vit_pytorch import ViT
-
-def get_vit(num_classes=5):
-    model = ViT(
-        image_size=224,
-        patch_size=16,
-        num_classes=num_classes,
-        dim=768,
-        depth=12,
-        heads=12,
-        mlp_dim=3072,
-        dropout=0.1,
-        emb_dropout=0.1
-    )
-    return model'''
