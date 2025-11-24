@@ -1,8 +1,8 @@
 # 👁️ AI-assisted Diabetic Retinopathy Screening from Fundus Images
 
-This repository contains the source code, training, and evaluation scripts for an AI-assisted Diabetic Retinopathy (DR) screening system. The project benchmarks three state-of-the-art deep learning architectures—**ResNet-50**, **EfficientNet-B0**, and a **Vision Transformer (ViT-B/16)**—on a high-stakes, binary classification task: distinguishing **'No DR' (Healthy)** from **'Severe-Stage DR'**.
+This repository contains the source code, training, and evaluation scripts for an AI-assisted Diabetic Retinopathy (DR) screening system. The project benchmarks three state-of-the-art deep learning architectures—**ResNet-50**, **EfficientNet-B0**, and a **Vision Transformer (ViT-B/16)**—on a high-stakes, binary classification task: distinguishing **'No DR' (Healthy)** from **'Severe-Stage DR'**, with **Grad-CAM** revealing critical differences in model interpretability and trustworthiness.
 
-This work was developed as a final project for a Machine Vision course (CS7367) offered by Kennesaw State University.
+This work was developed by **Tarun Teja Pokala** and **Mohan Krishna Thiriveedhi** as a final project for a Machine Vision course (CS7367) offered by Kennesaw State University.
 
 ## 🚀 Project Goal
 
@@ -136,3 +136,4 @@ Run `explain.py` to generate and save a Grad-CAM heatmap for a chosen image and 
 python explain.py
 # Follow console prompts to select model and image ID.
 ```
+
